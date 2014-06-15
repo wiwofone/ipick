@@ -5,16 +5,16 @@ A lightweight plugin jQuery plugin for picking icons from an icon font in a simp
 ## Download
 You can install ipick in one of several ways.
 
-1. Use Bower (recommended)
+* Use Bower (recommended)
 ```shell
 ```
 
-2. Clone the repo
+* Clone the repo
 ```shell
 git clone git://github.com/wiwofone/ipick.git
 ```
 
-3. Download the zip file
+* Download the zip file
 You can download the plugin [here](https://github.com/wiwofone/ipick/archive/master.zip).
 
 ## Installation
