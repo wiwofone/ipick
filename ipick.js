@@ -57,9 +57,9 @@
          * Removes the element and calls the callback function in the settings.
          */
         
-        var close = function(element) {
-            element.remove();
-            settings.onClose.call(this, icon);;
+        $.fn.ipick.close = function() {
+            $(".ipick-container").remove();
+            settings.onClose.call(this);;
         };
         
         /**
@@ -175,7 +175,7 @@
                 e.preventDefault();
                 var icon = $(this).data("iconpick-name");
                 settings.onPick.call(this, icon);
-                closePicker($picker);      
+                $.fn.ipick.close();
             });
             
             /* Change position to bottom left of element clicked */
@@ -190,7 +190,7 @@
                 $(document).on("click", function(e) {
                     if (!$element.is(e.target) && !$picker.is(e.target)
                         && $picker.has(e.target).length === 0) {
-                        closePicker($picker);
+                        $.fn.ipick.close();
                     }
                 });
             }
