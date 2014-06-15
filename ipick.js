@@ -76,7 +76,7 @@
          *     "justify"
          * ]}
          */    
-        var populatePicker = function(source, element) {
+        $.fn.ipick.populatePicker = function(source, element) {
     
             var icons = [];
             
@@ -151,7 +151,7 @@
             $picker.find(".ipick-navigation").html(navigationContent);
             
             /* Populate picker content */
-            populatePicker(settings.source, $picker);
+            $.fn.ipick.populatePicker(settings.source, $picker);
             
             /* Bind navigation keys */
             $picker.on("click", ".ipick-nav-previous", function() {
