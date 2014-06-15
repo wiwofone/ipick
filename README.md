@@ -34,7 +34,7 @@ Include the CSS file to allow for default styling of the picker:
 Then, include the plugin. Do this *after* the jQuery library:
 
 ```html
-<link rel="stylesheet" href="js/ipick.min.js">
+<script src="js/ipick.min.js"></script>
 ```
 
 ## Usage
@@ -71,7 +71,7 @@ Or, you can initialize it with any of the following options:
 ```
 
 ## License
-See `LICENSE`
+See `LICENSE`.
 
 ## Authors
 * Shahin Zarrabi - shahin@wiwo.se - [@wiwofone](http://twitter.com/wiwofone) - http://www.wiwo.se
