@@ -1,0 +1,26 @@
+{
+    "name": "ipick",
+    "version": "0.1.0",
+    "description": "A lightweight plugin jQuery plugin for picking icons from an icon font in a simple way.",
+    "keywords": [
+        "icon picker",
+        "font icons",
+        "icons",
+        "picker"
+    ],
+    "main": [
+        "js/ipick.js",
+        "js/ipick.min.js",
+        "css/ipick.scss",
+        "css/ipick.css"
+    ],
+    "ignore": [
+      "README.md",
+      ".gitignore",
+      "LICENSE"
+    ],
+    "dependencies": {
+        "jquery": ">=1.10.2"
+    },
+    "license": "MIT"
+}
