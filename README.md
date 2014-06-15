@@ -43,26 +43,30 @@ ipick fetches icons from any file with a JSON array in it. See the sample `icons
 The simplest way to initialize ipick is to bind it to any element (in this case, the defaults seen below are used):
 
 ```html
-<script>
-    var $picker = $(".myPicker").ipick();
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".myPicker").ipick();
+    }
 </script>
 ```
 
 Or, you can initialize it with any of the following options:
 ```html
-<script>
-    var $picker = $(".myPicker").ipick({
-        closeOnUnfocus: true,         /// Close the picker when it loses focus
-        source: "icons.json",         /// Source file for icon names
-        iconElement: "i",             /// HTML element for the icon
-        iconAttribute: "class",       /// HTML element attribute for name
-        iconsPerPage: 48,             /// Icons per tab
-        navigationElement: "button",  /// HTML element for nav-buttons
-        previousText: "Previous",     /// Text in "previous" button
-        nextText: "Next",             /// Text in "next" button
-        onPick: function() {},        /// Callback when an icon is picked
-        onClose: function() {}        /// Callback when picker is closed
-    });
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".myPicker").ipick({
+            closeOnUnfocus: true,         /// Close the picker when it loses focus
+            source: "icons.json",         /// Source file for icon names
+            iconElement: "i",             /// HTML element for the icon
+            iconAttribute: "class",       /// HTML element attribute for name
+            iconsPerPage: 48,             /// Icons per tab
+            navigationElement: "button",  /// HTML element for nav-buttons
+            previousText: "Previous",     /// Text in "previous" button
+            nextText: "Next",             /// Text in "next" button
+            onPick: function() {},        /// Callback when an icon is picked
+            onClose: function() {}        /// Callback when picker is closed
+        });
+    }
 </script>
 ```
 
