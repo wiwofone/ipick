@@ -15,6 +15,7 @@ git clone git://github.com/wiwofone/ipick.git
 ```
 
 * Download the zip file
+
 You can download the plugin [here](https://github.com/wiwofone/ipick/archive/master.zip).
 
 ## Installation
@@ -61,6 +62,9 @@ Or, you can initialize it with any of the following options:
     });
 </script>
 ```
+
+## License
+See `LICENSE`
 
 ## Authors
 * Shahin Zarrabi - shahin@wiwo.se - [@wiwofone](http://twitter.com/wiwofone) - http://www.wiwo.se
