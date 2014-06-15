@@ -2,11 +2,14 @@
 
 A lightweight plugin jQuery plugin for picking icons from an icon font in a simple way.
 
+This plugin was created semi-experimentally to learn jQuery plugin programming and Bower packaging, but also for use in my projects.
+
 ## Download
 You can install ipick in one of several ways.
 
 * Use Bower (recommended)
 ```shell
+bower install ipick
 ```
 
 * Clone the repo
