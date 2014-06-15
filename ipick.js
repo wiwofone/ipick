@@ -52,12 +52,12 @@ $.fn.ipick = function(options) {
         } else {
             $(".ipick-nav-next").show();
         }
-    }
+    };
     
     var closePicker = function(element) {
         element.remove();
         settings.onClose();
-    }
+    };
     
     /**
      * Fetch icons and populate the picker with them
@@ -73,11 +73,11 @@ $.fn.ipick = function(options) {
      *     "justify"
      * ]}
      */    
-    var populatePicker = function(icons, element) {
+    var populatePicker = function(source, element) {
 
         var icons = [];
         
-        $.getJSON(settings.source, function(list) {
+        $.getJSON(source, function(list) {
             icons = list.icons;
             element.remove(".ipick-icons-tab");
         
@@ -106,22 +106,20 @@ $.fn.ipick = function(options) {
                 i++;
                 j++;
             });
-            if (j == icons.length   ) {
+            if (j == icons.length) {
                 pickerContent += "</tr></table></div>";
             }
             
-            /* Add navigation keys for tabs */
-            pickerContent += '<div class="ipick-navigation">' +
-                                 '<' + settings.navigationElement + ' class="ipick-nav-previous">' + 
-                                 settings.previousText + '</' + settings.navigationElement + '>' +
-                                 '<' + settings.navigationElement + ' class="ipick-nav-next">' +
-                                  settings.nextText + '</' + settings.navigationElement + '>' +
-                             '</div>';
+            /* Add content to picker and refresh navigation */
+            element.find(".ipick-icons-tabs-container").html(pickerContent);
+            refreshNavigation(0);
+        })
+            .fail(function() {
             
-            /* Add content to picker */
-            element.append(pickerContent);
-        });
-    }
+                element.find(".ipick-icons-tabs-container").html("No icons were found.");
+                
+            });
+    };
     
     /**
      * ipick bind
@@ -142,6 +140,14 @@ $.fn.ipick = function(options) {
         var picker = document.createElement("div");
         $picker = jQuery(picker);
         $picker.addClass("ipick-container");
+        $picker.html('<div class="ipick-icons-tabs-container"></div><div class="ipick-navigation"></div>');
+        
+        /* Add navigational buttons */
+        var navigationContent = '<' + settings.navigationElement + ' class="ipick-nav-previous">' + 
+                                settings.previousText + '</' + settings.navigationElement + '>' +
+                                '<' + settings.navigationElement + ' class="ipick-nav-next">' +
+                                settings.nextText + '</' + settings.navigationElement + '>';
+        $picker.find(".ipick-navigation").html(navigationContent);
         
         /* Populate picker content */
         populatePicker(settings.source, $picker);
@@ -191,7 +197,7 @@ $.fn.ipick = function(options) {
             });
         }
         
-    }
+    };
 
     /**
      * We bind the ipickBind function to the element that ipick is called on,
