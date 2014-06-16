@@ -8,6 +8,15 @@
     position:absolute;
     z-index:9999;
     margin-top:10px;
+    min-width:440px;
+    max-width:440px;
+    
+    table
+    {
+        margin:0 auto;
+        min-width:410px;
+        max-width:410px;
+    }
     
     td
     {
@@ -35,9 +44,15 @@
         margin-top:5px;
         font-size:12px;
         
-        .ipick-nav-previous
+        .ipick-nav-close
         {
             float:left;
+        }
+        
+        .ipick-nav-previous
+        {
+            float:right;
+            margin-right:5px;
         }
         
         .ipick-nav-next

@@ -11,19 +11,20 @@
          * iconsPerPage      : How many icons to show per tab in the picker.
          * navElement        : The element to use for the navigation buttons.
          * navElementClass   : Additional classes for the navigation button.
+         * closeText         : The text to use in the "close" navigation button.
          * previousText      : The text to use in the "previous" navigation button.
          * nextText          : The text to use in the "next" navigation button.
          * onPick            : Callback when an icon is picked (clicked on).
          * onClose           : Callback when picker is closed.
          */
         var defaults = {
-            closeOnUnfocus: true,
             source: "icons.json",
             iconElement: "i",
             iconAttribute: "class",
             iconsPerPage: 48,
             navElement: "button",
-            navElementClass: "lol",
+            navElementClass: "",
+            closeText: "Close",
             previousText: "Previous",
             nextText: "Next",
             onPick: function() {},
@@ -146,17 +147,24 @@
             $picker.html('<div class="ipick-icons-tabs-container"></div><div class="ipick-navigation"></div>');
             
             /* Add navigational buttons */
-            var navigationContent = '<' + settings.navElement + ' class="ipick-nav-previous ' +
-                                     settings.navElementClass + '">' + settings.previousText + 
-                                     '</' + settings.navElement + '>' + '<' + settings.navElement + 
-                                     ' class="ipick-nav-next ' + settings.navElementClass + '">' +
-                                     settings.nextText + '</' + settings.navElement + '>';
+            var navigationContent = '<' + settings.navElement + ' class="ipick-nav-close ' +
+                                    settings.navElementClass + '">' + settings.closeText + 
+                                    '</' + settings.navElement + '>' +
+                                    '<' + settings.navElement + ' class="ipick-nav-next ' + 
+                                    settings.navElementClass + '">' + settings.nextText + 
+                                    '</' + settings.navElement + '> <' + settings.navElement + 
+                                    ' class="ipick-nav-previous ' + settings.navElementClass + '">' 
+                                    + settings.previousText + '</' + settings.navElement + '>';
             $picker.find(".ipick-navigation").html(navigationContent);
             
             /* Populate picker content */
             $.fn.ipick.populatePicker(settings.source, $picker);
             
             /* Bind navigation keys */
+            $picker.on("click", ".ipick-nav-close", function() {
+                $.fn.ipick.close();
+            });
+
             $picker.on("click", ".ipick-nav-previous", function() {
                 $currentTab = $(".ipick-icons-tab-current");
                 prevTab = $currentTab.data("ipick-tab")-1;
@@ -187,16 +195,6 @@
                        
             /* Add the picker to the body */
             $("body").prepend($picker);   
-            
-            /* Close the picker if it loses focus (default is true) */
-            if (settings.closeOnUnfocus) {
-                $(document).on("click", function(e) {
-                    if (!$element.is(e.target) && !$picker.is(e.target)
-                        && $picker.has(e.target).length === 0) {
-                        $.fn.ipick.close();
-                    }
-                });
-            }
             
         };
     

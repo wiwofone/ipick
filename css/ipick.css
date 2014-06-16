@@ -1,1 +1,61 @@
-.ipick-container{padding:15px;background:#fff;border-radius:5px;box-shadow:0 5px 10px rgba(0,0,0,0.1);font-size:20px;position:absolute;z-index:9999;margin-top:10px}.ipick-container td{padding:12px;width:30px;border:1px solid #fafafa;text-align:center;max-width:30px;vertical-align:middle;cursor:pointer}.ipick-container .ipick-icons-tab{display:none}.ipick-container .ipick-icons-tab-current{display:block !important}.ipick-container .ipick-navigation{margin-top:5px;font-size:12px}.ipick-container .ipick-navigation .ipick-nav-previous{float:left}.ipick-container .ipick-navigation .ipick-nav-next{float:right}.ipick-container:after{content:'';position:absolute;border-style:solid;border-width:0 8px 8px;border-color:#fff transparent;display:block;width:0;z-index:1;top:-8px;left:16px}.ipick-container:before{content:'';position:absolute;border-style:solid;border-width:0 8px 8px;border-color:#fafafa transparent;display:block;width:0;z-index:0;top:-8px;left:16px}
+.ipick-container {
+  padding: 15px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  position: absolute;
+  z-index: 9999;
+  margin-top: 10px;
+  min-width: 440px;
+  max-width: 440px; }
+  .ipick-container table {
+    margin: 0 auto;
+    min-width: 410px;
+    max-width: 410px; }
+  .ipick-container td {
+    padding: 12px;
+    width: 30px;
+    border: 1px solid #fafafa;
+    text-align: center;
+    max-width: 30px;
+    vertical-align: middle;
+    cursor: pointer; }
+  .ipick-container .ipick-icons-tab {
+    display: none; }
+  .ipick-container .ipick-icons-tab-current {
+    display: block !important; }
+  .ipick-container .ipick-navigation {
+    margin-top: 5px;
+    font-size: 12px; }
+    .ipick-container .ipick-navigation .ipick-nav-close {
+      float: left; }
+    .ipick-container .ipick-navigation .ipick-nav-previous {
+      float: right;
+      margin-right: 5px; }
+    .ipick-container .ipick-navigation .ipick-nav-next {
+      float: right; }
+
+.ipick-container:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 0 8px 8px;
+  border-color: #fff transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  top: -8px;
+  left: 16px; }
+
+.ipick-container:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 0 8px 8px;
+  border-color: #fafafa transparent;
+  display: block;
+  width: 0;
+  z-index: 0;
+  top: -8px;
+  left: 16px; }
