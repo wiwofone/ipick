@@ -177,7 +177,7 @@
             $picker.on("click", ".fa", function(e) {
                 e.preventDefault();
                 var icon = $(this).data("iconpick-name");
-                settings.onPick.call(this, icon);
+                settings.onPick.call($element, icon);
                 $.fn.ipick.close();
             });
             
