@@ -55,6 +55,7 @@ Or, you can initialize it with any of the following options:
     jQuery(document).ready(function($) {
         $(".myPicker").ipick({
             source: "icons.json",         /// Source file for icon names
+            pickerTitle: "Choose icon",   /// Title above picker (leave empty for none)
             iconElement: "i",             /// HTML element for the icon
             iconAttribute: "class",       /// HTML element attribute for name
             iconsPerPage: 48,             /// Icons per tab

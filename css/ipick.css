@@ -9,6 +9,9 @@
   margin-top: 10px;
   min-width: 440px;
   max-width: 440px; }
+  .ipick-container h1 {
+    font-size: 14px;
+    margin: 0 0 15px; }
   .ipick-container table {
     margin: 0 auto;
     min-width: 410px;
@@ -46,7 +49,7 @@
   width: 0;
   z-index: 1;
   top: -8px;
-  left: 16px; }
+  left: 8px; }
 
 .ipick-container:before {
   content: '';
@@ -58,4 +61,4 @@
   width: 0;
   z-index: 0;
   top: -8px;
-  left: 16px; }
+  left: 8px; }

@@ -4,8 +4,8 @@
         /**
          * Default settings
          *
-         * closeOnUnfocus    : If true, closes the picker when picker loses focus.
          * source            : The source from which to get a JSON array of icons.
+         * pickerTitle       : Title to show above picker (leave empty for none).
          * iconElement       : The element to be used for the icon.
          * iconAttribute     : The attribute in which to include the icon name.
          * iconsPerPage      : How many icons to show per tab in the picker.
@@ -19,6 +19,7 @@
          */
         var defaults = {
             source: "icons.json",
+            pickerTitle: "Choose icon",
             iconElement: "i",
             iconAttribute: "class",
             iconsPerPage: 48,
@@ -144,7 +145,12 @@
             var picker = document.createElement("div");
             $picker = jQuery(picker);
             $picker.addClass("ipick-container");
-            $picker.html('<div class="ipick-icons-tabs-container"></div><div class="ipick-navigation"></div>');
+            $picker.html('<div class="ipick-icons-tabs-container"></div>' +
+                         '<div class="ipick-navigation"></div>');
+                         
+            if(settings.pickerTitle != "") {
+                $picker.prepend('<h1>' + settings.pickerTitle + '</h1>');
+            }
             
             /* Add navigational buttons */
             var navigationContent = '<' + settings.navElement + ' class="ipick-nav-close ' +
