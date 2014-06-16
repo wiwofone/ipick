@@ -5,21 +5,20 @@ A lightweight plugin jQuery plugin for picking icons from an icon font in a simp
 This plugin was created semi-experimentally to learn jQuery plugin programming and Bower packaging, but also for use in my projects.
 
 ## Download
-You can install ipick in one of several ways.
+You can download ipick in one of several ways.
 
-* Use Bower (recommended)
+### Use Bower (recommended)
 ```shell
-bower install ipick
+$ bower install ipick
 ```
 
-* Clone the repo
+### Clone the repo
 ```shell
-git clone git://github.com/wiwofone/ipick.git
+$ git clone git://github.com/wiwofone/ipick.git
 ```
 
-* Download the zip file
-
-You can download the plugin [here](https://github.com/wiwofone/ipick/archive/master.zip).
+### Download the zip file
+You can get the repo zip file [here](https://github.com/wiwofone/ipick/archive/master.zip).
 
 ## Installation
 
@@ -60,7 +59,8 @@ Or, you can initialize it with any of the following options:
             iconElement: "i",             /// HTML element for the icon
             iconAttribute: "class",       /// HTML element attribute for name
             iconsPerPage: 48,             /// Icons per tab
-            navigationElement: "button",  /// HTML element for nav-buttons
+            navElement: "button",         /// HTML element for nav-buttons
+            navElementClass: ""           /// Additional classes for the navigation button
             previousText: "Previous",     /// Text in "previous" button
             nextText: "Next",             /// Text in "next" button
             onPick: function() {},        /// Callback when an icon is picked

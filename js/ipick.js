@@ -9,7 +9,8 @@
          * iconElement       : The element to be used for the icon.
          * iconAttribute     : The attribute in which to include the icon name.
          * iconsPerPage      : How many icons to show per tab in the picker.
-         * navigationElement : The element to use for the navigation buttons.
+         * navElement        : The element to use for the navigation buttons.
+         * navElementClass   : Additional classes for the navigation button.
          * previousText      : The text to use in the "previous" navigation button.
          * nextText          : The text to use in the "next" navigation button.
          * onPick            : Callback when an icon is picked (clicked on).
@@ -21,7 +22,8 @@
             iconElement: "i",
             iconAttribute: "class",
             iconsPerPage: 48,
-            navigationElement: "button",
+            navElement: "button",
+            navElementClass: "lol",
             previousText: "Previous",
             nextText: "Next",
             onPick: function() {},
@@ -144,10 +146,11 @@
             $picker.html('<div class="ipick-icons-tabs-container"></div><div class="ipick-navigation"></div>');
             
             /* Add navigational buttons */
-            var navigationContent = '<' + settings.navigationElement + ' class="ipick-nav-previous">' + 
-                                    settings.previousText + '</' + settings.navigationElement + '>' +
-                                    '<' + settings.navigationElement + ' class="ipick-nav-next">' +
-                                    settings.nextText + '</' + settings.navigationElement + '>';
+            var navigationContent = '<' + settings.navElement + ' class="ipick-nav-previous ' +
+                                     settings.navElementClass + '">' + settings.previousText + 
+                                     '</' + settings.navElement + '>' + '<' + settings.navElement + 
+                                     ' class="ipick-nav-next ' + settings.navElementClass + '">' +
+                                     settings.nextText + '</' + settings.navElement + '>';
             $picker.find(".ipick-navigation").html(navigationContent);
             
             /* Populate picker content */
