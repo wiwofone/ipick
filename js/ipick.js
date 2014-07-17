@@ -14,6 +14,7 @@
          * closeText         : The text to use in the "close" navigation button.
          * previousText      : The text to use in the "previous" navigation button.
          * nextText          : The text to use in the "next" navigation button.
+         * onCreate          : Callback when picker is opened.
          * onPick            : Callback when an icon is picked (clicked on).
          * onClose           : Callback when picker is closed.
          */
@@ -28,6 +29,7 @@
             closeText: "Close",
             previousText: "Previous",
             nextText: "Next",
+            onCreate: function() {},
             onPick: function() {},
             onClose: function() {}
         };
@@ -200,7 +202,10 @@
                 .css("left", $(this).offset().left).show();
                        
             /* Add the picker to the body */
-            $("body").prepend($picker);   
+            $("body").prepend($picker);  
+            
+            /* Start callback */
+            settings.onCreate.call(this);
             
         };
     

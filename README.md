@@ -64,6 +64,7 @@ Or, you can initialize it with any of the following options:
             closeText: "Close",           /// Text in "close" button
             previousText: "Previous",     /// Text in "previous" button
             nextText: "Next",             /// Text in "next" button
+            onCreate: function() {},      /// Callback when picker is created
             onPick: function() {},        /// Callback when an icon is picked
             onClose: function() {}        /// Callback when picker is closed
         });
